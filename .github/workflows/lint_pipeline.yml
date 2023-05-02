@@ -1,0 +1,31 @@
+name: lint_pipeline
+on:
+  push:
+    branches:
+      - "main"
+
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviromnent setup
+        uses: actions/checkout@v3
+
+      - name: Python install
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.0"
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install project dependencies
+        run: poetry install --without doc
+
+      - name: Run linters
+        run: poetry run task lint
