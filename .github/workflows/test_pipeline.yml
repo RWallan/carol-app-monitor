@@ -29,3 +29,14 @@ jobs:
 
       - name: Run tests
         run: poetry run task test --cov-report=xml
+        with:
+          CAROLAPPNAME: ${{ secrets.CAROLAPPNAME }}
+          CAROLTENANT: ${{ secrets.CAROLTENANT }}
+          CAROLORGANIZATION: ${{ secrets.CAROLORGANIZATION }}
+          CAROLAPPOAUTH: ${{ secrets.CAROLAPPOAUTH }}
+          CAROLCONNECTORID: ${{ secrets.CAROLCONNECTORID }}
+
+      - name: Upload coverage to codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
