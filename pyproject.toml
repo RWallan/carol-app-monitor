@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "carol-app-monitor"
+version = "0.1.0"
+description = "Carol App Monitor it's a app to monitoring Carol Apps and start the process if the app isn't running."
+license = "MIT"
+authors = ["RWallan <3am.richardwallan@gmail.com>"]
+readme = "README.md"
+packages = [{include = "carol_app_monitor"}]
+
+[tool.poetry.urls]
+"Source code" = "https://github.com/RWallan/carol-app-monitor"
+"Bug tracker" = "https://github.com/RWallan/carol-app-monitor/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pycarol = "^2.54.18"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-cov = "^4.0.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+taskipy = "^1.10.4"
+ipykernel = "^6.22.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.black]
+line-length = 79
+
+[tool.taskipy.tasks]
+pre_lint = "black --diff --color . & isort --diff ."
+lint = "black . && isort ."
+doc = "mkdocs serve"
+pre_test = "task lint"
+test = "pytest -s -x --cov=carol_app_monitor -vv"
+post_test = "coverage html"
