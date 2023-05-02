@@ -29,7 +29,7 @@ jobs:
 
       - name: Run tests
         run: poetry run task test --cov-report=xml
-        with:
+        env:
           CAROLAPPNAME: ${{ secrets.CAROLAPPNAME }}
           CAROLTENANT: ${{ secrets.CAROLTENANT }}
           CAROLORGANIZATION: ${{ secrets.CAROLORGANIZATION }}
