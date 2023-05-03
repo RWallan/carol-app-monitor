@@ -30,10 +30,10 @@ def test_get_process_status_must_return_correctly_carol_app_status_if_is_a_list_
 
     carol_apps_status = carol_api.get_process_status(carol_apps)
 
-    assert carol_apps_status == {
-        "cargoappdemo": "PAUSED",
-        "priappdemo": "PAUSED",
-    }
+    assert carol_apps_status == [
+        {"app_name": "cargoappdemo", "process_status": "PAUSED"},
+        {"app_name": "priappdemo", "process_status": "PAUSED"},
+    ]
 
 
 def test_get_process_status_must_return_correctly_carol_app_status_if_is_a_unique_carol_app():
@@ -41,9 +41,12 @@ def test_get_process_status_must_return_correctly_carol_app_status_if_is_a_uniqu
 
     carol_apps_status = carol_api.get_process_status(carol_apps)
 
-    assert carol_apps_status == {
-        "cargoappdemo": "PAUSED",
-    }
+    assert carol_apps_status == [
+        {
+            "app_name": "cargoappdemo",
+            "process_status": "PAUSED",
+        }
+    ]
 
 
 def test_get_process_name_must_return_a_list_of_dict_containing_app_name_and_process_name_if_is_a_list_of_carol_apps():
