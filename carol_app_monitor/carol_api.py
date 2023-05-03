@@ -57,7 +57,10 @@ def get_process_status(app_name: str | List[str]) -> Dict[str, str]:
             for app in app_name
         ]
 
-        return {app: status for app, status in zip(app_name, status)}
+        return [
+            {"app_name": app, "process_status": status}
+            for app, status in zip(app_name, status)
+        ]
 
     else:
         status = (
@@ -66,7 +69,7 @@ def get_process_status(app_name: str | List[str]) -> Dict[str, str]:
             .get("mdmRunningState")
         )
 
-        return {app_name: status}
+        return [{"app_name": app_name, "process_status": status}]
 
 
 def get_process_name(app_name: str | List[str]) -> List[Dict[str, str]]:
