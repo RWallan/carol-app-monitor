@@ -40,7 +40,7 @@ def get_process_status(app_name: str | List[str]) -> Dict[str, str]:
     """Get CarolApp process status by CarolApp name.
 
     Args:
-        app_name (str | List[str]): CarolApp name. Can be unique or a list.
+        app_name (str | List[str]): CarolApp name. Can be `str` or a `list`.
 
     Returns:
         Dict[str, str]: A dict containing the CarolApp name and your process\
