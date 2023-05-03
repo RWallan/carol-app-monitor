@@ -39,15 +39,15 @@ def get_all_carol_app_names(
     return carol_app_names
 
 
-def get_process_status(app_name: str | List[str]) -> Dict[str, str]:
+def get_process_status(app_name: str | List[str]) -> List[Dict[str, str]]:
     """Get CarolApp process status by CarolApp name.
 
     Args:
         app_name (str | List[str]): CarolApp name. Can be `str` or a `list`.
 
     Returns:
-        Dict[str, str]: A dict containing the CarolApp name and your process\
-            status.
+        List[Dict[str, str]]: A list of dicts containing the `app_name` and\
+            your `process_status`.
     """
     if isinstance(app_name, list):
         status = [
