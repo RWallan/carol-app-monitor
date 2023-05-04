@@ -1,0 +1,42 @@
+site_name: CarolApp Monitor
+repo_url: https://github.com/RWallan/carol-app-monitor
+repo_name: RWallan/carol-app-monitor
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo_reduced.png
+  favicon: assets/favicon.png
+  palette:
+    primary: deep orange
+    accent: deep orange
+    scheme: slate
+  features:
+    - content.tabs.link
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/css/extra.css
+  - stylesheets/css/termynal.css
+
+extra_javascript:
+  - stylesheets/js/termynal.js
+
+plugins:
+- macros
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [carol_app_monitor]
