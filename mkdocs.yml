@@ -5,9 +5,9 @@ edit_uri: tree/main/docs
 
 theme:
   name: material
-  language: pt-BR
-  logo: assets/logo_reduced.png
-  favicon: assets/favicon.png
+  language: en
+  logo: assets/images/logo_reduced.png
+  favicon: assets/images/favicon.png
   palette:
     primary: deep orange
     accent: deep orange
@@ -15,10 +15,26 @@ theme:
   features:
     - content.tabs.link
     - content.code.copy
+    - navigation.footer
+
+nav:
+- CarolApp Monitor: index.md
+- TOTVS Carol:
+  - carol/index.md
+- User Guide: 
+  - tutorial/index.md
+- API:
+  - api/carol_api.md
+- How to Contribute:
+  - contribute/index.md
 
 markdown_extensions:
   - attr_list
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
@@ -26,17 +42,20 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - codehilite
+  - pymdownx.inlinehilite
 
 extra_css:
   - stylesheets/css/extra.css
   - stylesheets/css/termynal.css
 
-extra_javascript:
+extra_js:
   - stylesheets/js/termynal.js
 
 plugins:
-- macros
-- mkdocstrings:
-    handlers:
-      python:
-        paths: [carol_app_monitor]
+  - macros
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [carol_app_monitor]
+    - termynal
