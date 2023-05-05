@@ -12,7 +12,7 @@ packages = [{include = "carol_app_monitor"}]
 "Bug tracker" = "https://github.com/RWallan/carol-app-monitor/issues"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.10, <4.0.0"
 pycarol = "^2.54.18"
 python-dotenv = "^1.0.0"
 
