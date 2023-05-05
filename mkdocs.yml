@@ -58,4 +58,4 @@ plugins:
       handlers:
         python:
           paths: [carol_app_monitor]
-    - termynal
+  - termynal
