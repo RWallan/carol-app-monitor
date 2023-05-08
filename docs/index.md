@@ -21,7 +21,12 @@
 
 ---
 
-CarolApp Monitor is a simple and useful app for monitor and restart an online CarolApp if it's not running based on a [*batch* CarolApp](#){target="_blank" .internal-link} that allow you to [configure easily a personalized schedule](#){target="_blank" .internal-link} to run the CarolApp Monitor.
+The CarolApp Monitor is a simple and useful application to monitor and automatically restart online CarolApps if they are not running. A [CarolApp](#){target="_blank" .internal-link} is an application developed in TOTVS Carol platform that offers specific business solutions.
+
+Using the CarolApp Monitor is simple!
+
+You just need to configure a batch CarolApp that allows you to easily [personalize a schedule](#){target="_blank" .internal-link}. With it, you can define specific time stamps to verify the CarolApp status and to automatically restart it if needed. This way, the CarolApp Monitor guarantees the continuous availability of your apps in TOTVS Carol platform.
+
 
 {% include "templates/cards.html" %}
 
@@ -42,7 +47,7 @@ The key features are:
 
 CarolApp Monitor will look periodically all [online CarolApps](#){target="_blank" .internal-link} searching if anyone isn't running and restart your services one by one.
 
-![placeholder](https://placehold.co/600x400){.center}
+![FlowChart](assets/images/flowchart.png){.center}
 
 ## Requirements
 
@@ -64,7 +69,7 @@ This documentation will introduce some definitions and concepts about TOTVS Caro
 
 ## Installation
 
-TTo use this project in your tenants, you'll need to create and build a CarolApp. 
+To use this project in your tenants, you'll need to create and build a CarolApp. 
 
 First, make the download `manifest.json` that include all settings to build your CarolApp. To make the download, just click in the button above :wink:.
 
@@ -84,7 +89,7 @@ And it's done! :partying_face:
     We suggest to mantains the "Carol App Monitor" name and the number of version "1.0.0" to your CarolApp.
 
 !!! info "Info"
-    You can read the entire tutorial in the [Tutorial](./tutorial/01_introduction.md){.internal-link} section.
+    You can read the entire tutorial in the [Tutorial](./tutorial/index.md){.internal-link} section.
 
 ## License
 This project is licensed under the terms of the MIT license.
