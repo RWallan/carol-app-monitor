@@ -49,9 +49,6 @@ extra_css:
   - stylesheets/css/extra.css
   - stylesheets/css/termynal.css
 
-extra_js:
-  - stylesheets/js/termynal.js
-
 plugins:
   - macros
   - mkdocstrings:
