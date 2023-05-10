@@ -15,6 +15,7 @@ packages = [{include = "carol_app_monitor"}]
 python = ">=3.10, <4.0.0"
 pycarol = "^2.54.18"
 python-dotenv = "^1.0.0"
+urllib3 = ">=1.26, <2"
 
 
 [tool.poetry.group.dev.dependencies]
