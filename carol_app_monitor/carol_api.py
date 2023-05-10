@@ -39,7 +39,9 @@ def get_all_carol_app_names(
     return carol_app_names
 
 
-def get_process_status(app_name: str | List[str]) -> List[Dict[str, str]]:
+def get_process_status(
+    app_name: str | List[str],
+) -> List[Dict[str, str | None]]:
     """Get CarolApp process status by CarolApp name.
 
     Args:
@@ -47,14 +49,17 @@ def get_process_status(app_name: str | List[str]) -> List[Dict[str, str]]:
 
     Returns:
         List[Dict[str, str]]: A list of dicts containing the `app_name` and\
-            your `process_status`.
+            your `process_status` or `None` if app doesn't have process infos.
     """
     if isinstance(app_name, list):
+        _process_info = [apps.get_processes_info(app) for app in app_name]
         status = [
-            apps.get_processes_info(app)
-            .get("mdmTenantAppAIProcessValues")[0]
-            .get("mdmRunningState")
-            for app in app_name
+            process.get("mdmTenantAppAIProcessValues")[0].get(
+                "mdmRunningState"
+            )
+            if process != {}
+            else None
+            for process in _process_info
         ]
 
         return [
@@ -63,16 +68,19 @@ def get_process_status(app_name: str | List[str]) -> List[Dict[str, str]]:
         ]
 
     else:
+        _process_info = apps.get_processes_info(app_name)
         status = (
-            apps.get_processes_info(app_name)
-            .get("mdmTenantAppAIProcessValues")[0]
-            .get("mdmRunningState")
+            _process_info.get("mdmTenantAppAIProcessValues")[0].get(
+                "mdmRunningState"
+            )
+            if _process_info != {}
+            else None
         )
 
         return [{"app_name": app_name, "process_status": status}]
 
 
-def get_process_name(app_name: str | List[str]) -> List[Dict[str, str]]:
+def get_process_name(app_name: str | List[str]) -> List[Dict[str, str | None]]:
     """Get process name.
 
     Args:
@@ -80,14 +88,15 @@ def get_process_name(app_name: str | List[str]) -> List[Dict[str, str]]:
 
     Returns:
         List[Dict[str, str]]: A list of dicts with `app_name` and the\
-            `process_name`.
+            `process_name` or `None` if app doesn't have process infos.
     """
     if isinstance(app_name, list):
+        _process_info = [apps.get_processes_info(app) for app in app_name]
         process_names = [
-            apps.get_processes_info(app)
-            .get("mdmTenantAppAIProcessValues")[0]
-            .get("mdmName")
-            for app in app_name
+            process.get("mdmTenantAppAIProcessValues")[0].get("mdmName")
+            if process != {}
+            else None
+            for process in _process_info
         ]
 
         return [
@@ -95,10 +104,11 @@ def get_process_name(app_name: str | List[str]) -> List[Dict[str, str]]:
             for app, process_name in zip(app_name, process_names)
         ]
     else:
+        _process_info = apps.get_processes_info(app_name)
         process_name = (
-            apps.get_processes_info(app_name)
-            .get("mdmTenantAppAIProcessValues")[0]
-            .get("mdmName")
+            _process_info.get("mdmTenantAppAIProcessValues")[0].get("mdmName")
+            if _process_info != {}
+            else None
         )
 
         return [{"app_name": app_name, "process_name": process_name}]
