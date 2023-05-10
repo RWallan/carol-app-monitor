@@ -33,21 +33,21 @@ def filter_dicts_by_values(
 
     Args:
         raw_dicts (List[Dict]): The list of dicts to filter.
-        filter_value (str | List | None): The value or a list of values to filter by.
+        filter_value (str | List | None): The value or a list of values to filter by.\
         Can be `None` if you want to drop all dictionaries with empty values.
 
-        keep (bool | None, optional): Whether to keep the dictionaries that
+        keep (bool | None, optional): Whether to keep the dictionaries that\
         contain the `filter_value`. Defaults to None.
 
-        drop (bool | None, optional): Whether to exclude the dictionaries that
+        drop (bool | None, optional): Whether to exclude the dictionaries that\
         contain the `filter_value`. Defaults to None.
 
     Raises:
-        ValueError: If `keep` and `drop` are `None`, raises: keep and drop
+        ValueError: If `keep` and `drop` are `None`, raises: keep and drop\
         cannot be both None.
-        ValueError: If `keep` and `drop` are `True`, raises: keep and drop
+        ValueError: If `keep` and `drop` are `True`, raises: keep and drop\
         cannot be both True.
-        ValueError: If `keep` and `drop` are `False`, raises: keep and drop
+        ValueError: If `keep` and `drop` are `False`, raises: keep and drop\
         cannot be both False.
         TypeError: If `keep` is `True` or `drop` is `False` and`filter_value`\
         isn't a `str` or a `list`, raises: To keep the `filter_value` it must\
@@ -125,7 +125,7 @@ def merge_dicts(*dicts: Dict) -> Dict:
     """Merge dicts into unique dict.
 
     Raises:
-        TypeError: If any args aren't a dict, raises:
+        TypeError: If any args aren't a dict, raises:\
         Args must be a `dict`.
 
     Returns:
