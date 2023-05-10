@@ -25,6 +25,7 @@ nav:
   - tutorial/index.md
 - API:
   - api/carol_api.md
+  - api/monitor.md
   - api/utils.md
 - How to Contribute:
   - contribute/index.md
