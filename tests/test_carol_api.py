@@ -83,3 +83,24 @@ def test_get_task_status():
     task_status = carol_api.get_task_status("2d7b84d6834d4616a27dbd8c781f0320")
 
     assert task_status == "COMPLETED"
+
+
+def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_entity_type_if_is_a_list_of_carol_apps():
+    carol_apps = ["cargoappdemo", "priappdemo"]
+
+    carol_apps_infos = carol_api.get_entity_type(carol_apps)
+
+    assert carol_apps_infos == [
+        {"app_name": "cargoappdemo", "entity_type": "batch"},
+        {"app_name": "priappdemo", "entity_type": "online"},
+    ]
+
+
+def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_entity_type_if_is_a_unique_carol_app():
+    carol_apps = "cargoappdemo"
+
+    carol_apps_infos = carol_api.get_entity_type(carol_apps)
+
+    assert carol_apps_infos == [
+        {"app_name": "cargoappdemo", "entity_type": "batch"},
+    ]
