@@ -1,4 +1,4 @@
-from . import monitor
+from carol_app_monitor import monitor
 
 
 def execute_monitor():
