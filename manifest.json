@@ -1,0 +1,38 @@
+{
+    "batch": {
+      "processes": [
+        {
+          "name": "carolappmonitor",
+          "algorithmName": "main",
+          "namespace": "",
+          "algorithmTitle": {
+            "pt-br": "CarolApp Monitor - Health Check for CarolApps",
+            "en-US": "CarolApp Monitor - Health Check for CarolApps"
+          },
+          "algorithmDescription": {
+            "pt-br": "The CarolApp Monitor is a simple and useful application to monitor and automatically restart online CarolApps if they are not running.",
+            "en-US": "The CarolApp Monitor is a simple and useful application to monitor and automatically restart online CarolApps if they are not running."
+          },
+          "instanceProperties": {
+            "profile": "",
+            "properties": {
+              "dockerName": "carolappmonitor",
+              "preemptible": false,
+              "instanceType": "c1.micro"
+            }
+          }
+        }
+      ]
+    },
+    "docker": [
+      {
+        "dockerName": "carolappmonitor",
+        "dockerTag": "0.1.0",
+        "gitBranch": "main",
+        "gitPath": "",
+        "instanceType": "c1.micro",
+        "gitDockerfileName": "Dockerfile", 
+        "gitRepoUrl": "https://github.com/RWallan/carol-app-monitor"
+      }
+    ]
+  }
