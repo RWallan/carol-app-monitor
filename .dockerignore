@@ -1,0 +1,13 @@
+.github/
+.pytest_cache/
+.venv/
+.vscode/
+docs/
+htmlcov/
+tests/
+.coverage/
+.env
+.gitignore
+manifest.json
+mkdocs.yml
+README.md
