@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "carol-app-monitor"
-version = "0.1.0"
+version = "0.1.1"
 description = "Carol App Monitor it's a app to monitoring Carol Apps and start the process if the app isn't running."
 license = "MIT"
 authors = ["RWallan <3am.richardwallan@gmail.com>"]
