@@ -93,8 +93,8 @@ def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_enti
     carol_apps_infos = carol_api.get_entity_type(carol_apps)
 
     assert carol_apps_infos == [
-        {"app_name": "cargoappdemo", "entity_type": "batch"},
-        {"app_name": "priappdemo", "entity_type": "online"},
+        {"app_name": "cargoappdemo", "entity_type": "BATCH"},
+        {"app_name": "priappdemo", "entity_type": "ONLINE"},
     ]
 
 
@@ -104,7 +104,7 @@ def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_enti
     carol_apps_infos = carol_api.get_entity_type(carol_apps)
 
     assert carol_apps_infos == [
-        {"app_name": "cargoappdemo", "entity_type": "batch"},
+        {"app_name": "cargoappdemo", "entity_type": "BATCH"},
     ]
 
 

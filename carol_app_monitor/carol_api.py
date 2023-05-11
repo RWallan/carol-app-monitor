@@ -164,7 +164,7 @@ def get_entity_type(app_name: str | List[str]) -> List[Dict[str, str]]:
 
     Returns:
         List[Dict[str, str | None]]: A list of dicts with `app_name` and the\
-            `entity_type`: `batch`, `online`, or `None` if app\
+            `entity_type`: `BATCH`, `ONLINE`, or `None` if app\
                 doesn't have process infos.
 
     Notes:
@@ -172,20 +172,15 @@ def get_entity_type(app_name: str | List[str]) -> List[Dict[str, str]]:
         * mdmTenantAppAIProcess: batch
         * mdmTenantAppAIProcessWorking: online
     """
-    TYPE_SCHEMA: Dict[str, str] = {
-        "mdmTenantAppAIProcess": "batch",
-        "mdmTenantAppAIProcessWorking": "online",
-    }
-
     if isinstance(app_name, list):
         _process_info = [apps.get_processes_info(app) for app in app_name]
-        _entity_types = [
-            apps.get_processes_info(app).get("mdmEntityType")
-            for app in app_name
-        ]
-
         entity_types = [
-            TYPE_SCHEMA.get(entity_type) for entity_type in _entity_types
+            process.get("mdmTenantAppAIProcessValues")[0].get(
+                "mdmAIProcessType"
+            )
+            if process != {}
+            else None
+            for process in _process_info
         ]
 
         return [
@@ -194,11 +189,13 @@ def get_entity_type(app_name: str | List[str]) -> List[Dict[str, str]]:
         ]
     else:
         _process_info = apps.get_processes_info(app_name)
-        _entity_type = (
-            _process_info.get("mdmEntityType") if _process_info != {} else None
+        entity_type = (
+            _process_info.get("mdmTenantAppAIProcessValues")[0].get(
+                "mdmAIProcessType"
+            )
+            if _process_info != {}
+            else None
         )
-
-        entity_type = TYPE_SCHEMA.get(_entity_type)
 
         return [{"app_name": app_name, "entity_type": entity_type}]
 

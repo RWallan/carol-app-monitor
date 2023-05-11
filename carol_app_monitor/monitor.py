@@ -69,7 +69,7 @@ def start_online_processes(
         `status`, `success` and `detail`
     """
     online_processes = filter_dicts_by_values(
-        monitor_schema, "online", keep=True
+        monitor_schema, "ONLINE", keep=True
     )
     not_running_processes = filter_dicts_by_values(
         online_processes, "RUNNING", drop=True

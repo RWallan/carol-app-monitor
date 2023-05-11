@@ -7,31 +7,31 @@ def test_create_monitor_schema_must_return_correct_schema():
             "app_name": "scloud1",
             "process_status": "PAUSED",
             "process_name": "docker_jupyter",
-            "entity_type": "batch",
+            "entity_type": "ONLINE",
         },
         {
             "app_name": "teste",
             "process_status": "PAUSED",
             "process_name": "versao2",
-            "entity_type": "online",
+            "entity_type": "ONLINE",
         },
         {
             "app_name": "cargoappdemo",
             "process_status": "PAUSED",
             "process_name": "cargoapp",
-            "entity_type": "batch",
+            "entity_type": "BATCH",
         },
         {
             "app_name": "aulas",
             "process_status": "PAUSED",
             "process_name": "cargoapp",
-            "entity_type": "batch",
+            "entity_type": "BATCH",
         },
         {
             "app_name": "priappdemo",
             "process_status": "PAUSED",
             "process_name": "priapp",
-            "entity_type": "online",
+            "entity_type": "ONLINE",
         },
     ]
 
@@ -43,34 +43,28 @@ def test_create_monitor_schema_must_return_correct_schema():
 def test_start_online_processes_must_return_correct_infos():
     monitor_schema = [
         {
-            "app_name": "scloud1",
-            "process_status": "PAUSED",
-            "process_name": "docker_jupyter",
-            "entity_type": "batch",
-        },
-        {
             "app_name": "teste",
             "process_status": "PAUSED",
             "process_name": "versao2",
-            "entity_type": "online",
+            "entity_type": "ONLINE",
         },
         {
             "app_name": "cargoappdemo",
             "process_status": "PAUSED",
             "process_name": "cargoapp",
-            "entity_type": "batch",
+            "entity_type": "BATCH",
         },
         {
             "app_name": "aulas",
             "process_status": "PAUSED",
             "process_name": "cargoapp",
-            "entity_type": "batch",
+            "entity_type": "BATCH",
         },
         {
             "app_name": "priappdemo",
             "process_status": "PAUSED",
             "process_name": "priapp",
-            "entity_type": "online",
+            "entity_type": "ONLINE",
         },
     ]
 
