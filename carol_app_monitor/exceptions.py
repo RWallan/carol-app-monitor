@@ -6,7 +6,10 @@ class TaskError(Exception):
     """
 
     def __init__(self, task_id: str) -> None:
-        self.message = f"Something wrong while processing the task: {task_id}"
+        self.task_id = task_id
+        self.args = (
+            f"Something wrong while processing the task: {self.task_id}",
+        )
 
 
 class MaxRetryError(Exception):
@@ -17,4 +20,7 @@ class MaxRetryError(Exception):
     """
 
     def __init__(self, num_retries: int) -> None:
-        self.message = f"Exceeded maximum number of attempts ({num_retries})"
+        self.num_retries = num_retries
+        self.args = (
+            f"Exceeded maximum number of attempts ({self.num_retries})",
+        )
