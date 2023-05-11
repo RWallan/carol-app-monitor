@@ -1,3 +1,5 @@
+import random
+import time
 from typing import Any, Dict, List
 
 from dotenv import find_dotenv, load_dotenv
@@ -199,3 +201,38 @@ def get_entity_type(app_name: str | List[str]) -> List[Dict[str, str]]:
         entity_type = TYPE_SCHEMA.get(_entity_type)
 
         return [{"app_name": app_name, "entity_type": entity_type}]
+
+
+def check_task_status(task_id: str, task_name: str = "") -> Dict[str, str]:
+    """Check the task status until it complete with success, fail or if is\
+    canceled.
+
+    Args:
+        task_id (str): The task id.
+        task_name (str, optional): The task name. Defaults to "".
+
+    Returns:
+        Dict[str, str]: A dict with the `task_status` and the `detail`.
+    """
+    if task_name:
+        task_string = f"{task_name}/{task_id}"
+    else:
+        task_string = task_id
+
+    while get_task_status(task_id) in ["READY", "RUNNING"]:
+        time.sleep(round(12 * random.random() * 5, 2))
+
+    task_status = get_task_status(task_id)
+
+    if task_status == "COMPLETED":
+        detail = f"Task has successfully completed: {task_string}"
+
+        return {"task_status": task_status, "detail": detail}
+    elif task_status == "FAILED":
+        detail = f"Something went wrong while processing: {task_string}"
+
+        return {"task_status": task_status, "detail": detail}
+    elif task_status == "CANCELED":
+        detail = f"The task has been CANCELED: {task_string}"
+
+        return {"task_status": task_status, "detail": detail}

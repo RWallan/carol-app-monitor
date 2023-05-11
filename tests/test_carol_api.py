@@ -1,3 +1,5 @@
+from pytest import mark
+
 from carol_app_monitor import carol_api
 
 
@@ -104,3 +106,40 @@ def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_enti
     assert carol_apps_infos == [
         {"app_name": "cargoappdemo", "entity_type": "batch"},
     ]
+
+
+@mark.parametrize(
+    "task_id, task_name, expected",
+    [
+        (
+            "a6c3e56de01749cbaca5d816d792fb00",
+            "AI Process: priapp START (Carol App: priappdemo v1.0.0)",
+            {
+                "task_status": "CANCELED",
+                "detail": "The task has been CANCELED: AI Process: priapp START (Carol App: priappdemo v1.0.0)/a6c3e56de01749cbaca5d816d792fb00",
+            },
+        ),
+        (
+            "2d7b84d6834d4616a27dbd8c781f0320",
+            "TASK TEST",
+            {
+                "task_status": "COMPLETED",
+                "detail": "Task has successfully completed: TASK TEST/2d7b84d6834d4616a27dbd8c781f0320",
+            },
+        ),
+        (
+            "06f7a61920e145ad98509e90f0fb54f0",
+            "AI Process: versao2 START (Carol App: teste v1.0.0)",
+            {
+                "task_status": "FAILED",
+                "detail": "Something went wrong while processing: AI Process: versao2 START (Carol App: teste v1.0.0)/06f7a61920e145ad98509e90f0fb54f0",
+            },
+        ),
+    ],
+)
+def test_check_task_status_must_return_correct_info(
+    task_id, task_name, expected
+):
+    task_info = carol_api.check_task_status(task_id, task_name)
+
+    assert task_info == expected
