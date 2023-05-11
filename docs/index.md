@@ -74,7 +74,7 @@ To use this project in your tenants, you'll need to create and build a CarolApp.
 First, make the download `manifest.json` that include all settings to build your CarolApp. To make the download, just click in the button above :wink:.
 
 <center>
-    <a href="./assets/teste.txt" download="teste.txt" class="md-button md-button--primary">:material-download: Download manifest</a>
+    <a href="./assets/manifest.json" download="manifest.json" class="md-button md-button--primary">:material-download: Download manifest</a>
 </center>
 
 After that, we'll configure your batch CarolApp. To configure this app, you'll need:
@@ -86,7 +86,7 @@ After that, we'll configure your batch CarolApp. To configure this app, you'll n
 And it's done! :partying_face:
 
 ??? tip "Tip"
-    We suggest to mantains the "Carol App Monitor" name and the number of version "1.0.0" to your CarolApp.
+    We suggest to mantains the "Carol App Monitor" name and the number of version "0.1.0" to your CarolApp.
 
 !!! info "Info"
     You can read the entire tutorial in the [Tutorial](./tutorial/index.md){.internal-link} section.
