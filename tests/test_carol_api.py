@@ -135,6 +135,14 @@ def test_get_entity_type_must_return_a_list_of_dict_containing_app_name_and_enti
                 "detail": "Something went wrong while processing: AI Process: versao2 START (Carol App: teste v1.0.0)/06f7a61920e145ad98509e90f0fb54f0",
             },
         ),
+        (
+            "2d7b84d6834d4616a27dbd8c781f0320",
+            "",
+            {
+                "task_status": "COMPLETED",
+                "detail": "Task has successfully completed: 2d7b84d6834d4616a27dbd8c781f0320",
+            },
+        ),
     ],
 )
 def test_check_task_status_must_return_correct_info(
