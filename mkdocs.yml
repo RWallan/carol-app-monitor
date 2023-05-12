@@ -23,6 +23,9 @@ nav:
   - carol/index.md
 - User Guide: 
   - tutorial/index.md
+  - tutorial/create.md
+  - tutorial/build.md
+  - tutorial/schedule.md
 - API:
   - api/carol_api.md
   - api/monitor.md
