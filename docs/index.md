@@ -86,7 +86,7 @@ After that, we'll configure your batch CarolApp. To configure this app, you'll n
 And it's done! :partying_face:
 
 ??? tip "Tip"
-    We suggest to mantains the "Carol App Monitor" name and the number of version "0.1.0" to your CarolApp.
+    We suggest to mantains the "Carol App Monitor" name and the number of version "0.1.1" to your CarolApp.
 
 !!! info "Info"
     You can read the entire tutorial in the [Tutorial](./tutorial/index.md){.internal-link} section.
