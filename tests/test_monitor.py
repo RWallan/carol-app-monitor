@@ -66,6 +66,12 @@ def test_start_online_processes_must_return_correct_infos():
             "process_name": "priapp",
             "entity_type": "ONLINE",
         },
+        {
+            'app_name': 'carolappmonitor',
+            'process_status': 'PAUSED',
+            'process_name': 'carolappmonitor',
+            'entity_type': 'BATCH'
+        }
     ]
 
     num_retries = 1
