@@ -27,7 +27,7 @@
     "docker": [
       {
         "dockerName": "carolappmonitor",
-        "dockerTag": "0.1.0",
+        "dockerTag": "0.1.1",
         "gitBranch": "main",
         "gitPath": "",
         "instanceType": "c1.micro",
