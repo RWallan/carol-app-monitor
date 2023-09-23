@@ -44,7 +44,7 @@ The key features are:
 
 CarolApp Monitor will look periodically all online CarolApps searching if anyone isn't running and restart your services one by one.
 
-![FlowChart](assets/images/flowchart.png)
+![FlowChart](docs/assets/images/flowchart.png)
 
 ## Requirements
 
@@ -67,7 +67,7 @@ With that, TOTVS Carol enables:
 * **Recomendations** :white_check_mark:: With machine learning algorithms the plataform can understand action patterns made by humans and create recomendations of how to act in similar processes.
 * **Otimization** :simple-googleoptimize:: More performance and padronization with Deep Neural Network.
 * **Computational vision** :eye:: You can work with real time data generated with your cameras using facial recognization.
-* **Conversation experience** :material-chat:: Using NLP it's possible to create entire structure of conversations.
+* **Conversation experience** 💬: Using NLP it's possible to create entire structure of conversations.
 
 ## Installation
 
