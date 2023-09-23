@@ -18,19 +18,20 @@ theme:
     - navigation.footer
 
 nav:
-- CarolApp Monitor: index.md
-- TOTVS Carol:
+- CarolApp Monitor [REV]: index.md
+- TOTVS Carol [WIP]:
   - carol/index.md
-- User Guide: 
+- User Guide [WIP]: 
   - tutorial/index.md
   - tutorial/create.md
   - tutorial/build.md
   - tutorial/schedule.md
+  - tutorial/conclusion.md
 - API:
   - api/carol_api.md
   - api/monitor.md
   - api/utils.md
-- How to Contribute:
+- How to Contribute [WIP]:
   - contribute/index.md
 
 markdown_extensions:
