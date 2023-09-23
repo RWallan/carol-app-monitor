@@ -21,11 +21,11 @@
 
 ---
 
-The CarolApp Monitor is a simple and useful application to monitor and automatically restart online CarolApps if they are not running. A [CarolApp](#){target="_blank" .internal-link} is an application developed in TOTVS Carol platform that offers specific business solutions.
+The CarolApp Monitor is a simple and useful application to monitor and automatically restart online CarolApps if they are not running. A [CarolApp](#){target="_blank" .internal-link}([ADD] Link ref) is an application developed in TOTVS Carol platform that offers specific business solutions.
 
 Using the CarolApp Monitor is simple!
 
-You just need to configure a batch CarolApp that allows you to easily [personalize a schedule](#){target="_blank" .internal-link}. With it, you can define specific time stamps to verify the CarolApp status and to automatically restart it if needed. This way, the CarolApp Monitor guarantees the continuous availability of your apps in TOTVS Carol platform.
+You just need to configure a batch CarolApp that allows you to easily [personalize a schedule](./tutorial/schedule.md){target="_blank" .internal-link}. With it, you can define specific time stamps to verify the CarolApp status and to automatically restart it if needed. This way, the CarolApp Monitor guarantees the continuous availability of your apps in TOTVS Carol platform.
 
 
 {% include "templates/cards.html" %}
@@ -45,11 +45,11 @@ The key features are:
 
 ## What CarolApp Monitor do: [ADD Flowchart]
 
-CarolApp Monitor will look periodically all [online CarolApps](#){target="_blank" .internal-link} searching if anyone isn't running and restart your services one by one.
+CarolApp Monitor will look periodically all [online CarolApps](#){target="_blank" .internal-link} ([ADD] Link ref) searching if anyone isn't running and restart your services one by one.
 
 ![FlowChart](assets/images/flowchart.png){.center}
 
-## Requirements
+## Requirements [REV]
 
 Python 3.10+
 
