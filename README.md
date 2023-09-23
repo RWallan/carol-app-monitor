@@ -15,7 +15,7 @@
 
 ---
 
-**Documentation:** [https://github.com/RWallan/carol-app-monitor/tree/main/docs](https://github.com/RWallan/carol-app-monitor/tree/main/docs)
+**Documentation:** [https://carol-app-monitor.readthedocs.io/en/latest/](https://carol-app-monitor.readthedocs.io/en/latest/)
 
 **Source code:** [https://github.com/RWallan/carol-app-monitor](https://github.com/RWallan/carol-app-monitor)
 
