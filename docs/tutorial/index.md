@@ -18,8 +18,8 @@ First of all, you need to download the `manifest.json` file. This file will conf
 You can download the `manifest.json` above:
 
 <center>
-    <a href="./assets/manifest.json" download="manifest.json" class="md-button md-button--primary">:material-download: Download manifest</a>
+    <a href="../assets/manifest.json" download="manifest.json" class="md-button md-button--primary">:material-download: Download manifest</a>
 </center>
 
-!!! note
-    You can also download the `manifest.json` file in the [GitHub Repository](#){target="_blank" .external-link}.
+??? note "Another way to make download"
+    You can also download the `manifest.json` file in the [GitHub Repository](https://github.com/RWallan/carol-app-monitor/blob/main/manifest.json){target="_blank" .external-link}.
