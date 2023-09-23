@@ -1,6 +1,6 @@
 # CarolApp Monitor
 
-![logo](assets/images/logo.png)
+![logo](docs/assets/images/logo.png)
 
 <p align="center">
     <a href="https://codecov.io/gh/RWallan/carol-app-monitor" target="_blank"> 
